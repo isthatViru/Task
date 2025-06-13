@@ -25,7 +25,7 @@ const Navbar = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            Shop Now
           </Typography>
           <Box sx={{ display:'flex', gap:5}}>
           <Typography
