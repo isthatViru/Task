@@ -28,7 +28,7 @@ const Cart = () => {
       <Typography variant="h4" gutterBottom  style={{
         marginTop:'5rem'
       }}>
-        Your Cart
+       Your Cart
       </Typography>
 
       {item.length === 0 ? (
