@@ -1,6 +1,6 @@
 import { Box, Button, CardContent, CardMedia, Grid, Typography, Card } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-
+import '../style/Products.css';
 const Cart = () => {
   const [item, setItem] = useState([]);
 
@@ -15,7 +15,16 @@ const Cart = () => {
   };
 
   return (
-    <Box sx={{ mt: 4, px: 2 }}>
+  <Box
+  sx={{
+    mt: {
+      xs: 12, 
+      sm: 7,
+      md: -30  
+    },
+    px: 2
+  }}
+>
       <Typography variant="h4" gutterBottom>
         Your Cart
       </Typography>
@@ -47,7 +56,20 @@ const Cart = () => {
             ))}
           </Grid>
 
-          <Box display="flex" justifyContent="flex-end" mt={4}>
+          <Box display="flex" justifyContent="center"  mt={4}
+          sx={{
+            position:{
+              xs:'absolute',
+              sm:'static',
+            },
+            top:{
+              xs:45,
+            },
+             right:{
+              xs:8,
+            },
+          }}
+          >
             <Button variant="outlined" color="error" onClick={handleClear}>
               Clear Cart
             </Button>

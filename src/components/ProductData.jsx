@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router'
 import axios from 'axios';
 import { Alert } from '@mui/material';
-import '../style/ProductData.css'
+import '../style/ProductData.css';
 import {
   Container,
   Typography,

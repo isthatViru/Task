@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 const Navbar = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position='fixed' color="default">
+      <AppBar position='fixed' style={{backgroundColor:'#27548A'}}>
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <Typography
             variant="h6"

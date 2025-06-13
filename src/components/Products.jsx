@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import {
   Grid,
   Card,
@@ -11,40 +11,40 @@ import {
   Alert,
   Box,
 } from "@mui/material";
-import Icon from "@mui/material/Icon";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import { Link } from "react-router-dom";
 import axios from "axios";
 import "../style/Products.css";
+
 const Products = () => {
   const nav = useNavigate();
   const [product, setProduct] = useState([]);
   const [error, setError] = useState();
+
   useEffect(() => {
     axios
       .get("https://fakestoreapi.com/products")
       .then((response) => {
         setProduct(response.data);
-        setError();
+        setError(null);
       })
       .catch(() => {
         setError("Something Went Wrong");
       });
   }, []);
-  
- const handleCart = () => {
-  if (!product) return;
 
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  cart.push({
-    id: product.id,
-    title: product.title,
-    price: product.price,
-    image: product.image
-  });
-  localStorage.setItem('cart', JSON.stringify(cart));
-  nav('/cart');
-};
+  const handleCart = (item) => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push({
+      id: item.id,
+      title: item.title,
+      price: item.price,
+      image: item.image,
+    });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    alert("Product added to cart!");
+    nav('/Cart')
+  };
+
   return (
     <Box className="product-box">
       <Typography variant="h4" className="product-title">
@@ -57,8 +57,8 @@ const Products = () => {
           sx={{
             mb: 2,
             textAlign: "center",
-            width: "100rem",
-            justifyContent: "center",
+            maxWidth: "600px",
+            margin: "0 auto",
             mt: 5,
           }}
         >
@@ -66,9 +66,19 @@ const Products = () => {
         </Alert>
       )}
 
-      <Grid container spacing={10} justifyContent={"center"}>
+      <Grid container    rowSpacing={10} columnSpacing={8} 
+      sx={{
+         justifyContent:{
+              xs:'start',
+              sm:'start',
+              md:'center',
+              lg:'center'
+            }
+      }}>
         {product.map((item) => (
-          <Grid item xs={12} sm={6} md={4} lg={3} key={item.id}>
+         <Grid item xs={12} sm={6} md={4} lg={3} key={item.id}
+        
+          >
             <Card className="product-card">
               <CardMedia
                 component="img"
@@ -92,9 +102,9 @@ const Products = () => {
                 <Button
                   variant="outlined"
                   className="card-button"
-                  onClick={handleCart}
+                  onClick={() => handleCart(item)}
                 >
-                  <ShoppingCartOutlinedIcon></ShoppingCartOutlinedIcon>
+                  <ShoppingCartOutlinedIcon />
                 </Button>
               </CardActions>
             </Card>

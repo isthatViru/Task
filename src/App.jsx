@@ -5,11 +5,18 @@ import Navbar from './components/Navbar';
 import Products from './components/Products';
 import Cart from './components/Cart';
 import ProductData from './components/ProductData';
+import './App.css';
 
 const App = () => {
+
   return (
+    <>
+
+
+          
     <BrowserRouter>
       <Navbar />
+      
       <Routes>
         <Route path='/' element={<Home />} />
           <Route path='/Products' element={<Products />} />
@@ -17,6 +24,7 @@ const App = () => {
           <Route path="/productData/:id" element={<ProductData />} />
       </Routes>
     </BrowserRouter>
+  </>
   );
 };
 

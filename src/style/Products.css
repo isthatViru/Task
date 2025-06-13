@@ -2,25 +2,29 @@
 
 .product-box{
   padding: 80px 24px 24px;
-  background-color: #f5f5f5;
+ 
   min-height: 100vh;
 }
-
 .card-title {
   font-size: 1rem;
-  height: 48px; /* limit height */
+  font-weight: 500;
+  color: #333;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  max-height: 2.8em; /* Roughly 2 lines */
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;  /* Show only 2 lines */
-  -webkit-box-orient: vertical;
+
+
 }
+
 
 
 /* Grid Item Cards */
 .product-card {
+  text-align: center;
   height: 100%;
-  width: 15rem;
+  width: 25rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -42,20 +46,23 @@
 }
 
 .card-title {
+
   font-size: 1rem;
   font-weight: 600;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+    color: #DDA853;
 }
 
 .card-price {
-  color: #2e7d32;
+  color: #183B4E;
   font-size: 0.95rem;
   margin-top: 8px;
 }
 
 .card-button {
+  
   width: 100%;
   font-weight: 500;
 }
