@@ -1,0 +1,32 @@
+
+.product-card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  padding: 1.5rem !important;
+  display: flex !important;
+  gap: 2rem !important;
+  align-items: center !important;
+  
+}
+
+.product-image {
+  width: 250px !important;
+  object-fit: contain !important;
+  border-radius: 8px !important;
+}
+
+.product-title {
+  margin-bottom: 1.5rem !important;
+  font-weight: 600 !important;
+}
+
+.product-price {
+  color: #1976d2 !important;
+  font-weight: bold !important;
+  margin: 1rem 0 !important;
+}
+
+.add-to-cart-btn {
+  background-color: #1976d2 !important;
+  color: white !important;
+  text-transform: none !important;
+}
