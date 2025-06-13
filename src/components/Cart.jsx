@@ -25,7 +25,9 @@ const Cart = () => {
     px: 2
   }}
 >
-      <Typography variant="h4" gutterBottom sx:{{mt:5}}>
+      <Typography variant="h4" gutterBottom  style={{
+        marginTop:'5rem'
+      }}>>
         Your Cart
       </Typography>
 
